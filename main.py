@@ -55,7 +55,6 @@ def k_snowflake(length, num_corners, num_iteration):
     """
 
     t.down()
-    t.color(colors[r.randint(0, 7)])
     for i in range(num_corners):
         koch_line(length, num_iteration)
         t.right(180 - ((180 * (num_corners - 2)) / num_corners))
@@ -91,7 +90,6 @@ def i_f_1_snowflake(length, num_iteration):
     """
 
     t.down()
-    t.color(colors[r.randint(0, 7)])
     for i in range(4):
         ice_fractal_1(length, num_iteration)
         t.left(90)
@@ -130,7 +128,6 @@ def i_f_2_snowflake(length, num_iteration):
     """
 
     t.down()
-    t.color(colors[r.randint(0, 7)])
     for i in range(4):
         ice_fractal_2(length, num_iteration)
         t.left(90)
