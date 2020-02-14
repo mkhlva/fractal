@@ -1,4 +1,4 @@
-# Developers: K.Kravtsov  --  %
+# Developers: K.Kravtsov  --  90%
 #             A.Mikhailov --  %
 
 import turtle as t
