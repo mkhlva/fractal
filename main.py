@@ -1,10 +1,10 @@
 # Developers: K.Kravtsov  --  90%
-#             A.Mikhailov --  %
+#             A.Mikhailov --  15%
 
 import turtle as t
 import random as r
 
-def tree(length):
+def tree(length):                                         #building a tree
     """
 
     :param length:
@@ -21,7 +21,7 @@ def tree(length):
         t.right(30)
         t.backward(length)
 
-
+#Function for building a tree
 def koch_line(length, num_iteration):
     """
 
@@ -42,8 +42,9 @@ def koch_line(length, num_iteration):
         t.left(60)
         koch_line(length / 3, num_iteration - 1)
 
+#Function for building a koch snowflake
 
-def k_snowflake(length, num_corners, num_iteration):
+def k_snowflake(length, num_corners, num_iteration):        #
     """
 
     :param length:
@@ -57,7 +58,7 @@ def k_snowflake(length, num_corners, num_iteration):
         koch_line(length, num_iteration)
         t.right(180 - ((180 * (num_corners - 2)) / num_corners))
 
-
+#Snowflake built with straight koch
 def ice_fractal_1(length, num_iteration):
     """
 
@@ -78,7 +79,7 @@ def ice_fractal_1(length, num_iteration):
         t.left(90)
         ice_fractal_1(length / 2, num_iteration - 1)
 
-
+#Snowflake to an ice fractal with the construction of external and internal fractals.
 def i_f_1_snowflake(length, num_iteration):
     """
 
@@ -94,7 +95,7 @@ def i_f_1_snowflake(length, num_iteration):
         ice_fractal_1(length, num_iteration)
         t.left(180)
 
-
+#Algorithm for building a Ice fractal
 def ice_fractal_2(length, num_iteration):
     """
 
@@ -116,7 +117,7 @@ def ice_fractal_2(length, num_iteration):
         t.left(120)
         ice_fractal_2(length / 2, num_iteration - 1)
 
-
+#Snowflake to an ice fractal with the construction of external and internal fractals.
 def i_f_2_snowflake(length, num_iteration):
     """
 
@@ -132,7 +133,7 @@ def i_f_2_snowflake(length, num_iteration):
         ice_fractal_2(length, num_iteration)
         t.left(180)
 
-
+#Algorithm for building a branch
 def branch(length, num_iteration):
     """
 
@@ -156,7 +157,7 @@ def branch(length, num_iteration):
         t.forward(length)
         t.backward(length)
 
-
+#Algorithm for building a levy curve
 def levy_curve(length, num_iteration):
     """
 
@@ -175,7 +176,7 @@ def levy_curve(length, num_iteration):
         levy_curve(length / 2, num_iteration - 1)
         t.left(45)
 
-
+#Algorithm for building a minkowski curve
 def minkowski_curve(length, num_iteration):
     """
 
@@ -202,7 +203,7 @@ def minkowski_curve(length, num_iteration):
     else:
         t.forward(length)
 
-
+#Algorithm for building a dragon
 def dragon(length, num_iteration, turn):
     """
 
@@ -222,7 +223,9 @@ def dragon(length, num_iteration, turn):
     else:
         t.forward(length)
 
+#Function to call other functions
 def main():
+    #A list with the help of which we randomize the color
     colors = ["", "green", "yellow", "blue", "brown", "red", "orange", "pink", "black"]
 
     print("""    1. Кривая Коха
@@ -236,7 +239,6 @@ def main():
     9. Построение двоичного дерева
     10. Дракон Хартера-Хейтуэя
     11. Ветвь""")
-
     fractal = int(input("""Введите номер для построения фрактала: """))
 
     print("""Хотите сами вводить характеристики фигуры?
@@ -244,6 +246,9 @@ def main():
     2. Нет""")
 
     answer = int(input("""Введите номер ответа: """))
+    while answer != 1 and answer != 2:
+        answer = int(input("""Введите повторно номер ответа: """))
+
 
     if fractal == 1:
         if answer == 1:
